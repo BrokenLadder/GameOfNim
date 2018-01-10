@@ -35,8 +35,6 @@ namespace GameOfNim
         public bool isPlayer1Turn;
         public bool matchTaken;
 
-
-
         public MainWindow()
         {
             InitializeComponent();
