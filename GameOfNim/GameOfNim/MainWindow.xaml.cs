@@ -43,7 +43,39 @@ namespace GameOfNim
         }
         public void ComputerTurn()
         {
+            if(isPlayer1Turn == true)
+            {
+                isPlayer1Turn = false;
+            }
+            else
+            {
+                isPlayer1Turn = true;
+            }
 
+
+            if(row1MatchesLeft > 0)
+            {
+                row1MatchesLeft--;
+                //Hide Match 1 Label
+            }
+            else if(row2MatchesLeft > 0)
+            {
+                row2MatchesLeft--;
+                //Hide Match 2 Label
+            }
+            else if(row3MatchesLeft > 0)
+            {
+                row3MatchesLeft--;
+
+            }
+            else if(row4MatchesLeft > 0)
+            {
+                row4MatchesLeft--;
+            }
+            else
+            {
+                Console.WriteLine("There are no matches left in any rows");
+            }
         }
     }
 }
