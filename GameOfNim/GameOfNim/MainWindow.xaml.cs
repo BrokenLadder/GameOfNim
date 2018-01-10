@@ -25,7 +25,6 @@ namespace GameOfNim
         public string player2Name;
         public string difficulty;
         public string gameMode;
-        public int mathchesRemaining;
         public int matchesRemaining;
         public int row1MatchesLeft;
         public int row2MatchesLeft;
@@ -71,16 +70,159 @@ namespace GameOfNim
 
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
+            SetUpGrid.Visibility = Visibility.Visible;
+            Game.Visibility = Visibility.Hidden;
+            EndScreen.Visibility = Visibility.Hidden;
+            //playerName = p_one_name.Text;
+            p_one_name.Text = "Player 1 Name";
+            p_two_name.Text = "Player 2 Name";
+            computerName = "";
+            playerName = "";
+            playerName = "";
+            player2Name = "";
+            difficulty = "";
+            gameMode = "";
+            matchesRemaining = 0;
+            row1MatchesLeft = 0;
+            row2MatchesLeft = 0;
+            row3MatchesLeft = 0;
+            row4MatchesLeft = 0;
+            isPVP = false;
+            isPlayer1Turn = true;
+            matchTaken = false;
 
         }
 
         private void No_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
 
         }
         public void ComputerTurn()
         {
 
         }
+
+        public void PlaceMatches()
+        {
+
+            for (int i = 0; i < row1MatchesLeft; i++)
+            {
+                Label label = new Label();
+
+                Canvas_Row_one.Children.Add(label);
+            }
+            for (int i = 0; i < row2MatchesLeft; i++)
+            {
+                Label label = new Label();
+
+                Canvas_Row_two.Children.Add(label);
+            }
+            for (int i = 0; i < row3MatchesLeft; i++)
+            {
+                Label label = new Label();
+
+                Canvas_Row_three.Children.Add(label);
+            }
+            for (int i = 0; i < row4MatchesLeft; i++)
+            {
+                Label label = new Label();
+
+                Canvas_Row_four.Children.Add(label);
+            }
+
+
+
+        }
+        public void SetUp()
+        {
+           playerName = p_one_name.Text;
+         player2Name =  p_two_name.Text;
+            int selectedIndex = diffSelect.SelectedIndex;
+            Object selectedItem = diffSelect.SelectedItem;
+
+            if (selectedItem.ToString() == "Easy")
+            {
+                difficulty = "Easy";
+                row1MatchesLeft = 3;
+                row2MatchesLeft = 3;
+            }
+            else if (selectedItem.ToString() == "Medium")
+            {
+                difficulty = "Medium";
+                row1MatchesLeft = 2;
+                row2MatchesLeft = 5;
+                row2MatchesLeft = 7;
+            }
+            else
+            {
+                difficulty = "Hard";
+                row1MatchesLeft = 2;
+                row2MatchesLeft = 3;
+                row3MatchesLeft = 8;
+                row4MatchesLeft = 9;
+
+            }
+
+            if (isPVP != true)
+            {
+
+                playerTurnLabel.Visibility = Visibility.Hidden;
+            }
+
+        }
+        public void PlayerRotation()
+        {
+            if (matchesRemaining == 1)
+            {
+                //EndGame();
+            }
+
+
+            isPlayer1Turn = false;
+
+
+            if (row1MatchesLeft > 0)
+            {
+                row_one_btn.Visibility = Visibility.Visible;
+            }
+            if (row2MatchesLeft > 0)
+            {
+                row_two_btn.Visibility = Visibility.Visible;
+
+            }
+            if (row3MatchesLeft > 0)
+            {
+                row_three_btn.Visibility = Visibility.Visible;
+
+            }
+            if (row4MatchesLeft > 0)
+            {
+                row_four_btn.Visibility = Visibility.Visible;
+
+            }
+
+        }
+        public void PVPSelectedIndexChanged()
+        {
+            int selectedIndex = modeSelect.SelectedIndex;
+            Object selectedItem = modeSelect.SelectedItem;
+            if (selectedItem.ToString() == "PVC")
+            {
+                p_two_name.Visibility = Visibility.Hidden;
+                gameMode = "PVC";
+                computerName = "CPU";
+            }
+            else
+            {
+                gameMode = "PVP";
+                isPVP = true;
+
+            }
+        }
+
+
+
     }
+
 }
