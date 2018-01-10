@@ -20,9 +20,30 @@ namespace GameOfNim
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string computerName;
+        public string playerName;
+        public string player2Name;
+        public string difficulty;
+        public string gameMode;
+        public int mathchesRemaining;
+        public int matchesRemaining;
+        public int row1MatchesLeft;
+        public int row2MatchesLeft;
+        public int row3MatchesLeft;
+        public int row4MatchesLeft;
+        public bool isPVP;
+        public bool isPlayer1Turn;
+        public bool matchTaken;
+
+
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+        public void ComputerTurn()
+        {
+
         }
     }
 }
