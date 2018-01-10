@@ -24,5 +24,44 @@ namespace GameOfNim
         {
             InitializeComponent();
         }
+
+        private void StartButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Row_one_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Row_two_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Row_three_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Row_four_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EndTurn_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Yes_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void No_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

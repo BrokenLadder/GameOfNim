@@ -7,6 +7,107 @@
         mc:Ignorable="d"
         Title="NIM" Height="350" Width="525">
     <Grid>
-        <Button>Hello Gabe World!</Button>
+        <Grid x:Name="SetUp">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75*" />
+                <ColumnDefinition Width="40*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="setupColumn"
+                        Grid.Column="0"
+                        Background="Coral">
+                <TextBlock FontSize="18"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"
+                           Margin="0 15 0 0">Game of Nim Set-Up Page</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="14" FontWeight="Bold" Margin="10 10">Gamemode:</TextBlock>
+                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100">
+                        <ComboBoxItem IsSelected="True">PVC</ComboBoxItem>
+                        <ComboBoxItem>PVP</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0"  Margin="10 10">Player 1:</TextBlock>
+                    <TextBox x:Name="p_one_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10">Player 1 Name</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Player 2:</TextBlock>
+                    <TextBox x:Name="p_two_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10">Player 2 Name</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Difficulty:</TextBlock>
+                    <ComboBox x:Name="diffSelect" Margin="10 10" MinWidth="100">
+                        <ComboBoxItem IsSelected="True">Easy</ComboBoxItem>
+                        <ComboBoxItem>Medium</ComboBoxItem>
+                        <ComboBoxItem>Hard</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                <Button x:Name="startButton"
+                        Click="startButton_Click"
+                        MaxWidth="150"
+                        Height="35"
+                        Margin="0 50 0 0">Start Game</Button>
+            </StackPanel>
+            <TextBox Grid.Column="1" TextWrapping="Wrap">Rules go here. I ain't fixin' this till later as HECK.</TextBox>
+        </Grid>
+
+        <Grid x:Name="Game" Visibility="Hidden">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="40*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Background="Coral">
+                <Canvas x:Name="Canvas_Row_one" Height="60"></Canvas>
+                <Canvas x:Name="Canvas_Row_two" Height="60"></Canvas>
+                <Canvas x:Name="Canvas_Row_three" Height="60"></Canvas>
+                <Canvas x:Name="Canvas_Row_four" Height="60"></Canvas>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Background="CadetBlue">
+                <Button x:Name="row_one_btn"
+                        Click="Row_one_btn_Click"
+                        Margin="10 20">Row 1</Button>
+                <Button x:Name="row_two_btn"
+                        Click="Row_two_btn_Click"
+                        Margin="10 20">Row 2</Button>
+                <Button x:Name="row_three_btn"
+                        Click="Row_three_btn_Click"
+                        Margin="10 20">Row 3</Button>
+                <Button x:Name="row_four_btn"
+                        Click="Row_four_btn_Click"
+                        Margin="10 20">Row 4</Button>
+                <Button x:Name="endTurn_btn"
+                        Click="EndTurn_btn_Click"
+                        Margin="10 20">End Turn</Button>
+            </StackPanel>
+            <TextBox Grid.Column="2" TextWrapping="Wrap">Rules here again for later aaaaaa.</TextBox>
+        </Grid>
+
+        <Grid x:Name="EndScreen"
+              Background="Coral"
+              Visibility="Hidden">
+            <StackPanel>
+                <Label x:Name="Win_Announce"
+                       HorizontalAlignment="Center"
+                       FontSize="40"
+                       FontWeight="Bold"
+                       Margin="10 50">Test Content</Label>
+                <Label FontSize="24"
+                       HorizontalAlignment="Center">Play Again?</Label>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Center">
+                    <Button x:Name="Yes_Click"
+                            Click="Yes_Click"
+                            Margin="20 20"
+                            Width="100"
+                            Height="25">Yes</Button>
+                    <Button x:Name="No_Click"
+                            Click="No_Click"
+                            Margin="20 20"
+                            Width="100"
+                            Height="25">No</Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
