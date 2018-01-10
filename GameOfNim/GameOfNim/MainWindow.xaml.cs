@@ -41,7 +41,9 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-
+            SetUpGrid.Visibility = Visibility.Hidden;
+            Game.Visibility = Visibility.Visible;
+            SetUp();
         }
 
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
