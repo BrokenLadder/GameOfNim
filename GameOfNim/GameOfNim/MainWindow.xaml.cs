@@ -82,5 +82,10 @@ namespace GameOfNim
         {
 
         }
+
+        private void ModeSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
