@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="NIM" Height="350" Width="525">
     <Grid>
-        <Grid x:Name="SetUpGrid" Visibility="Hidden">
+        <Grid x:Name="SetUpGrid" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*" />
                 <ColumnDefinition Width="40*" />
@@ -58,7 +58,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="Game" >
+        <Grid x:Name="Game" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*" />
                 <ColumnDefinition Width="25*" />

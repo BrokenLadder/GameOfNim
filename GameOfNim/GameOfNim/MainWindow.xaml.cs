@@ -110,29 +110,72 @@ namespace GameOfNim
 
         private void EndTurn_btn_Click(object sender, RoutedEventArgs e)
         {
-            if(matchesRemaining == 1)
+            if (matchesRemaining == 1)
             {
+                if (isPVP == true)
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = playerName;
+                    }
+                    else
+                    {
+                        Win_Announce.Content = player2Name;
+                    }
+                }
+                else
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = playerName;
+                    }
+                    else
+                    {
+                        Win_Announce.Content = computerName;
+                    }
+                }
+
                 EndGame();
-                //Change win label current player
             }
-            if(matchesRemaining <= 0)
+            if (matchesRemaining <= 0)
             {
                 //Change win label to the opposite of current player
-            }
-            if (gameMode == "PVP")
-            {
-                PlayerRotation();
-            }
-            else if(gameMode == "PVC")
-            {
-                ComputerTurn();
-            }
-            else
-            {
-                Console.WriteLine("Game Mode Was Not Changed Correctly");
+                if (isPVP == true)
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = player2Name + "Wins!";
+                    }
+                    else
+                    {
+                        Win_Announce.Content = playerName + "Wins!";
+                    }
+                }
+                else
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = computerName + "Wins!";
+                    }
+                    else
+                    {
+                        Win_Announce.Content = playerName + "Wins!";
+                    }
+                }
+                if (gameMode == "PVP")
+                {
+                    PlayerRotation();
+                }
+                else if (gameMode == "PVC")
+                {
+                    ComputerTurn();
+                }
+                else
+                {
+                    Console.WriteLine("Game Mode Was Not Changed Correctly");
+                }
             }
         }
-
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
             SetUpGrid.Visibility = Visibility.Visible;
@@ -173,22 +216,31 @@ namespace GameOfNim
             {
                 if (row1MatchesLeft > 0)
                 {
-                    
+                    //row1labels[0].Visibility = Visibility.Hidden;
+                    //Label l = row1labels[0];
+                    Game.Children.Remove(row1labels[0]);
+                    row1labels.Remove(row1labels[0]);
                     row1MatchesLeft--;
                     
                 }
                 else if (row2MatchesLeft > 0)
                 {
+                    Game.Children.Remove(row2labels[0]);
+                    row2labels.Remove(row2labels[0]);
                     row2MatchesLeft--;
                     //Hide Match 2 Label
                 }
                 else if (row3MatchesLeft > 0)
                 {
+                    Game.Children.Remove(row3labels[0]);
+                    row3labels.Remove(row3labels[0]);
                     row3MatchesLeft--;
                     //Hide Match 3 Label
                 }
                 else if (row4MatchesLeft > 0)
                 {
+                    Game.Children.Remove(row4labels[0]);
+                    row4labels.Remove(row4labels[0]);
                     row4MatchesLeft--;
                     //Hide Match 4 Label
                 }
