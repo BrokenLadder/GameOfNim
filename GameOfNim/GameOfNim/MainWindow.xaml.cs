@@ -249,7 +249,8 @@ namespace GameOfNim
         public void SetUp()
         {
       
-            playerTurnLabel.Content = playerName;
+            Turn_Label.Content = playerName;
+            isPlayer1Turn = true;
             int selectedIndex = diffSelect.SelectedIndex;
            
             Object selectedItem = diffSelect.SelectedItem;
@@ -276,7 +277,7 @@ namespace GameOfNim
             if (isPVP != true)
             {
 
-                playerTurnLabel.Visibility = Visibility.Hidden;
+                Turn_Label.Visibility = Visibility.Hidden;
             }
             PlaceMatches();
         }
@@ -287,8 +288,15 @@ namespace GameOfNim
                 EndGame();
             }
 
+            if (isPlayer1Turn == true)
+            {
 
             isPlayer1Turn = false;
+            }
+            else
+            {
+                isPlayer1Turn = true;
+            }
 
 
             if (row1MatchesLeft > 0)
@@ -308,6 +316,17 @@ namespace GameOfNim
             if (row4MatchesLeft > 0)
             {
                 row_four_btn.Visibility = Visibility.Visible;
+
+            }
+
+            if (isPlayer1Turn == false)
+            {
+                Turn_Label.Content = player2Name;
+
+            }
+            else
+            {
+                Turn_Label.Content = playerName;
 
             }
         }
