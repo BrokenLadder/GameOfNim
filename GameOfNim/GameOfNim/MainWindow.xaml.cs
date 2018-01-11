@@ -174,27 +174,30 @@ namespace GameOfNim
         public void PlaceMatches()
         {
 
-            for (int i = 0; i < row1MatchesLeft; i++)
+            for (int i = 1; i < row1MatchesLeft; i++)
             {
                 Label label = new Label();
-
+                label.Name = "row1match" + i;
                 Canvas_Row_one.Children.Add(label);
             }
-            for (int i = 0; i < row2MatchesLeft; i++)
+            for (int i = 1; i < row2MatchesLeft; i++)
             {
                 Label label = new Label();
+                label.Name = "row2match" + i;
 
                 Canvas_Row_two.Children.Add(label);
             }
-            for (int i = 0; i < row3MatchesLeft; i++)
+            for (int i = 1; i < row3MatchesLeft; i++)
             {
                 Label label = new Label();
+                label.Name = "row3match" + i;
 
                 Canvas_Row_three.Children.Add(label);
             }
-            for (int i = 0; i < row4MatchesLeft; i++)
+            for (int i = 1; i < row4MatchesLeft; i++)
             {
                 Label label = new Label();
+                label.Name = "row4match" + i;
 
                 Canvas_Row_four.Children.Add(label);
             }
@@ -204,27 +207,24 @@ namespace GameOfNim
         }
         public void SetUp()
         {
-           playerName = p_one_name.Text;
-         player2Name =  p_two_name.Text;
+      
+            playerTurnLabel.Content = playerName;
             int selectedIndex = diffSelect.SelectedIndex;
+           
             Object selectedItem = diffSelect.SelectedItem;
-
-            if (selectedItem.ToString() == "Easy")
+            if (difficulty == "Easy")
             {
-                difficulty = "Easy";
                 row1MatchesLeft = 3;
                 row2MatchesLeft = 3;
             }
-            else if (selectedItem.ToString() == "Medium")
+            else if (difficulty == "Medium")
             {
-                difficulty = "Medium";
                 row1MatchesLeft = 2;
                 row2MatchesLeft = 5;
                 row2MatchesLeft = 7;
             }
             else
             {
-                difficulty = "Hard";
                 row1MatchesLeft = 2;
                 row2MatchesLeft = 3;
                 row3MatchesLeft = 8;
@@ -237,7 +237,7 @@ namespace GameOfNim
 
                 playerTurnLabel.Visibility = Visibility.Hidden;
             }
-
+            PlaceMatches();
         }
         public void PlayerRotation()
         {
