@@ -54,6 +54,7 @@
                 <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
                 <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
                 <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
+                <TextBox TextWrapping="Wrap">*Computer automatically takes their turn during PVC Mode.</TextBox>
             </StackPanel>
         </Grid>
 
@@ -96,6 +97,7 @@
                 <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
                 <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
                 <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
+                <TextBox TextWrapping="Wrap">*Computer automatically takes their turn during PVC Mode.</TextBox>
             </StackPanel>
         </Grid>
 
