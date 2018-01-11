@@ -330,15 +330,15 @@ namespace GameOfNim
             EndScreen.Visibility = Visibility.Visible;
         }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
         private void ModeSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-=======
+//=======
 
 
->>>>>>> ce24027f449337d6525c6966216d6fe08e36e2ee
+//>>>>>>> ce24027f449337d6525c6966216d6fe08e36e2ee
     }
 
 }
