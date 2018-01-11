@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="NIM" Height="350" Width="525">
     <Grid>
-        <Grid x:Name="SetUpGrid" Visibility="Visible">
+        <Grid x:Name="SetUpGrid" Visibility="Hidden">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*" />
                 <ColumnDefinition Width="40*" />
@@ -33,7 +33,6 @@
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Player 2:</TextBlock>
                     <TextBox x:Name="p_two_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10" >Player 2 Name</TextBox>
-      
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Difficulty:</TextBlock>
@@ -49,10 +48,16 @@
                         Height="35"
                         Margin="0 50 0 0">Start Game</Button>
             </StackPanel>
-            <TextBox Grid.Column="1" TextWrapping="Wrap">Rules go here. I ain't fixin' this till later as HECK.</TextBox>
+            <StackPanel Grid.Column="1">
+                <TextBox FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</TextBox>
+                <TextBox TextWrapping="Wrap">1.Each player takes any amount of matches from one row.</TextBox>
+                <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
+                <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
+                <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
+            </StackPanel>
         </Grid>
 
-        <Grid x:Name="Game" Visibility="Hidden">
+        <Grid x:Name="Game" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*" />
                 <ColumnDefinition Width="25*" />
@@ -85,7 +90,13 @@
                        
                         Margin="10 0"></Label>
             </StackPanel>
-            <TextBox Grid.Column="2" TextWrapping="Wrap">Rules here again for later aaaaaa.</TextBox>
+            <StackPanel Grid.Column="2">
+                <TextBox FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</TextBox>
+                <TextBox TextWrapping="Wrap">1.Each player takes any amount of matches from one row.</TextBox>
+                <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
+                <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
+                <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
+            </StackPanel>
         </Grid>
 
         <Grid x:Name="EndScreen"
