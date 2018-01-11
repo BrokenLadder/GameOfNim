@@ -33,6 +33,10 @@ namespace GameOfNim
         public bool isPVP;
         public bool isPlayer1Turn;
         public bool matchTaken;
+        List<Label> row1labels = new List<Label>();
+        List<Label> row2labels = new List<Label>();
+        List<Label> row3labels = new List<Label>();
+        List<Label> row4labels = new List<Label>();
 
         public MainWindow()
         {
@@ -65,7 +69,27 @@ namespace GameOfNim
 
         private void EndTurn_btn_Click(object sender, RoutedEventArgs e)
         {
-
+            if(matchesRemaining == 1)
+            {
+                EndGame();
+                //Change win label current player
+            }
+            if(matchesRemaining <= 0)
+            {
+                //Change win label to the opposite of current player
+            }
+            if (gameMode == "PVP")
+            {
+                PlayerRotation();
+            }
+            else if(gameMode == "PVC")
+            {
+                ComputerTurn();
+            }
+            else
+            {
+                Console.WriteLine("Game Mode Was Not Changed Correctly");
+            }
         }
 
         private void Yes_Click(object sender, RoutedEventArgs e)
@@ -100,38 +124,46 @@ namespace GameOfNim
         }
         public void ComputerTurn()
         {
-            if(isPlayer1Turn == true)
+            if(matchesRemaining == 1)
             {
-                isPlayer1Turn = false;
+                EndGame();
+            }
+            else if (matchesRemaining > 1)
+            {
+                if (row1MatchesLeft > 0)
+                {
+                    
+                    row1MatchesLeft--;
+                    
+                }
+                else if (row2MatchesLeft > 0)
+                {
+                    row2MatchesLeft--;
+                    //Hide Match 2 Label
+                }
+                else if (row3MatchesLeft > 0)
+                {
+                    row3MatchesLeft--;
+                    //Hide Match 3 Label
+                }
+                else if (row4MatchesLeft > 0)
+                {
+                    row4MatchesLeft--;
+                    //Hide Match 4 Label
+                }
+                else
+                {
+                    Console.WriteLine("There are no matches left in any rows");
+                }
+                row_one_btn.Visibility = Visibility.Visible;
+                row_two_btn.Visibility = Visibility.Visible;
+                row_three_btn.Visibility = Visibility.Visible;
+                row_four_btn.Visibility = Visibility.Visible;
+                matchesRemaining--;
             }
             else
             {
-                isPlayer1Turn = true;
-            }
-
-
-            if(row1MatchesLeft > 0)
-            {
-                row1MatchesLeft--;
-                //Hide Match 1 Label
-            }
-            else if(row2MatchesLeft > 0)
-            {
-                row2MatchesLeft--;
-                //Hide Match 2 Label
-            }
-            else if(row3MatchesLeft > 0)
-            {
-                row3MatchesLeft--;
-
-            }
-            else if(row4MatchesLeft > 0)
-            {
-                row4MatchesLeft--;
-            }
-            else
-            {
-                Console.WriteLine("There are no matches left in any rows");
+                //Figure Out How EndGame Goes and set the person whos turn it just was to the loser
             }
         }
 
@@ -253,7 +285,10 @@ namespace GameOfNim
             }
         }
 
-
+        public void EndGame()
+        {
+            
+        }
 
     }
 
