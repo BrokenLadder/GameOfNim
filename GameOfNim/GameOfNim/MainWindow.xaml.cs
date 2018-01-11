@@ -41,9 +41,12 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            playerName = p_one_name.Text;
+            player2Name = p_two_name.Text;
+            difficulty = diffSelect.Text;
+            SetUp();
             SetUpGrid.Visibility = Visibility.Hidden;
             Game.Visibility = Visibility.Visible;
-            SetUp();
         }
 
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
@@ -53,6 +56,7 @@ namespace GameOfNim
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
+
             if(row1MatchesLeft == 0)
             {
                 row_one_btn.Visibility = Visibility.Hidden;
@@ -75,6 +79,7 @@ namespace GameOfNim
 
         private void Row_three_btn_Click(object sender, RoutedEventArgs e)
         {
+            
             row3MatchesLeft -= 1;
             matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
@@ -205,7 +210,7 @@ namespace GameOfNim
         public void SetUp()
         {
            playerName = p_one_name.Text;
-         player2Name =  p_two_name.Text;
+           player2Name =  p_two_name.Text;
             int selectedIndex = diffSelect.SelectedIndex;
             Object selectedItem = diffSelect.SelectedItem;
 
@@ -269,7 +274,6 @@ namespace GameOfNim
                 row_four_btn.Visibility = Visibility.Visible;
 
             }
-
         }
         public void PVPSelectedIndexChanged()
         {
