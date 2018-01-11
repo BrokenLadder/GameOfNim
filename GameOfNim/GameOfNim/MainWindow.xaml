@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="NIM" Height="350" Width="525">
     <Grid>
-        <Grid x:Name="SetUp">
+        <Grid x:Name="SetUpGrid" Visibility="Visible">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75*" />
                 <ColumnDefinition Width="40*" />
@@ -32,7 +32,8 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Player 2:</TextBlock>
-                    <TextBox x:Name="p_two_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10">Player 2 Name</TextBox>
+                    <TextBox x:Name="p_two_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10" >Player 2 Name</TextBox>
+      
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Difficulty:</TextBlock>
@@ -43,7 +44,7 @@
                     </ComboBox>
                 </StackPanel>
                 <Button x:Name="startButton"
-                        Click="startButton_Click"
+                        Click="StartButton_Click"
                         MaxWidth="150"
                         Height="35"
                         Margin="0 50 0 0">Start Game</Button>
@@ -80,6 +81,9 @@
                 <Button x:Name="endTurn_btn"
                         Click="EndTurn_btn_Click"
                         Margin="10 20">End Turn</Button>
+                <Label x:Name="playerTurnLabel"
+                       
+                        Margin="10 0"></Label>
             </StackPanel>
             <TextBox Grid.Column="2" TextWrapping="Wrap">Rules here again for later aaaaaa.</TextBox>
         </Grid>
@@ -97,12 +101,12 @@
                        HorizontalAlignment="Center">Play Again?</Label>
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Center">
-                    <Button x:Name="Yes_Click"
+                    <Button x:Name="Yes_Click_Button"
                             Click="Yes_Click"
                             Margin="20 20"
                             Width="100"
                             Height="25">Yes</Button>
-                    <Button x:Name="No_Click"
+                    <Button x:Name="No_Click_Button"
                             Click="No_Click"
                             Margin="20 20"
                             Width="100"
