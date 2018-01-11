@@ -215,28 +215,32 @@ namespace GameOfNim
             {
                 Label label = new Label();
                 label.Name = "row1match" + i;
-                Canvas_Row_one.Children.Add(label);
+                row1labels.Add(label);
+                Row_one.Children.Add(label);
             }
             for (int i = 1; i < row2MatchesLeft; i++)
             {
                 Label label = new Label();
                 label.Name = "row2match" + i;
+                row2labels.Add(label);
 
-                Canvas_Row_two.Children.Add(label);
+                Row_two.Children.Add(label);
             }
             for (int i = 1; i < row3MatchesLeft; i++)
             {
                 Label label = new Label();
                 label.Name = "row3match" + i;
+                row3labels.Add(label);
 
-                Canvas_Row_three.Children.Add(label);
+                Row_three.Children.Add(label);
             }
             for (int i = 1; i < row4MatchesLeft; i++)
             {
                 Label label = new Label();
                 label.Name = "row4match" + i;
+                row4labels.Add(label);
 
-                Canvas_Row_four.Children.Add(label);
+                Row_four.Children.Add(label);
             }
 
 
