@@ -21,8 +21,8 @@
                            Margin="0 15 0 0">Game of Nim Set-Up Page</TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Margin="10 10">Gamemode:</TextBlock>
-                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100">
-                        <ComboBoxItem x:Name="pvc_selection" IsSelected="True">PVC</ComboBoxItem>
+                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100" SelectionChanged="ModeSelect_SelectionChanged">
+                        <ComboBoxItem IsSelected="True">PVC</ComboBoxItem>
                         <ComboBoxItem>PVP</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
@@ -59,10 +59,11 @@
                 <ColumnDefinition Width="40*" />
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Coral">
-                <Canvas x:Name="Canvas_Row_one" Height="60"></Canvas>
-                <Canvas x:Name="Canvas_Row_two" Height="60"></Canvas>
-                <Canvas x:Name="Canvas_Row_three" Height="60"></Canvas>
-                <Canvas x:Name="Canvas_Row_four" Height="60"></Canvas>
+                <StackPanel Orientation="Horizontal" x:Name="Row_one" Height="60"></StackPanel>
+                <StackPanel Orientation="Horizontal" x:Name="Row_two" Height="60"></StackPanel>
+                <StackPanel Orientation="Horizontal" x:Name="Row_three" Height="60"></StackPanel>
+                <StackPanel Orientation="Horizontal" x:Name="Row_four" Height="60"></StackPanel>
+                <Label x:Name="Turn_Label" Height="60" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Player 1 Turn.</Label>
             </StackPanel>
             <StackPanel Grid.Column="1" Background="CadetBlue">
                 <Button x:Name="row_one_btn"
