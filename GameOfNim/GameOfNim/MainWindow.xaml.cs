@@ -45,9 +45,35 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            playerName = p_one_name.Text;
-            player2Name = p_two_name.Text;
+            if (p_one_name.Text != "")
+            {
+                playerName = p_one_name.Text;
+            }
+            else
+            {
+                playerName = "Player One";
+            }
+            if (p_two_name.Visibility != Visibility.Hidden)
+            {
+                if (p_two_name.Text != "")
+                {
+                    playerName = p_two_name.Text;
+                }
+                else
+                {
+                    playerName = "Player Two";
+
+                }
+            }
             difficulty = diffSelect.Text;
+            if(gameMode != "Hard" || gameMode != "Medium")
+            {
+                row_three_btn.Visibility = Visibility.Hidden;
+            }
+            if(gameMode != "Hard")
+            {
+                row_four_btn.Visibility = Visibility.Hidden;
+            }
             SetUp();
             SetUpGrid.Visibility = Visibility.Hidden;
             Game.Visibility = Visibility.Visible;
@@ -55,12 +81,15 @@ namespace GameOfNim
 
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
         {
-            row1MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
-
+            if(row1labels.Count != 0)
+            {
+                row1labels.Remove(row1labels.Last());
+            }
+            row1MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if(row1MatchesLeft == 0)
             {
                 row_one_btn.Visibility = Visibility.Hidden;
@@ -69,11 +98,15 @@ namespace GameOfNim
         }
         private void Row_two_btn_Click(object sender, RoutedEventArgs e)
         {
-            row2MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
+            if (row2labels.Count != 0)
+            {
+                row2labels.Remove(row2labels.Last());
+            }
+            row2MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row2MatchesLeft == 0)
             {
                 row_two_btn.Visibility = Visibility.Hidden;
@@ -83,12 +116,15 @@ namespace GameOfNim
 
         private void Row_three_btn_Click(object sender, RoutedEventArgs e)
         {
-            
-            row3MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
+            if (row3labels.Count != 0)
+            {
+                row3labels.Remove(row3labels.Last());
+            }
+            row3MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row3MatchesLeft == 0)
             {
                 row_three_btn.Visibility = Visibility.Hidden;
@@ -97,11 +133,15 @@ namespace GameOfNim
 
         private void Row_four_btn_Click(object sender, RoutedEventArgs e)
         {
-            row4MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
+            if (row4labels.Count != 0)
+            {
+                row4labels.Remove(row4labels.Last());
+            }
+            row4MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row4MatchesLeft == 0)
             {
                 row_four_btn.Visibility = Visibility.Hidden;
