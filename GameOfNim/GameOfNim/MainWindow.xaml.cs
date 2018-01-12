@@ -247,6 +247,11 @@ namespace GameOfNim
             }
             
         }
+        /// <summary>
+        /// Takes the user back to the start screen for a new game, resets all game variables, hides the necessary grids  
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
             SetUpGrid.Visibility = Visibility.Visible;
@@ -276,7 +281,11 @@ namespace GameOfNim
             matchTaken = false;
 
         }
-
+        /// <summary>
+        /// Closes the application window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void No_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -378,7 +387,10 @@ namespace GameOfNim
                 EndGame();
             }
         }
-
+        /// <summary>
+        /// Places the appropriate number of match labels into corresponding stack panels,
+        /// number of match labels and rows based on difficulty  
+        /// </summary>
         public void PlaceMatches()
         {
             var counter1 = 1;
@@ -438,6 +450,11 @@ namespace GameOfNim
 
 
         }
+        /// <summary>
+        /// Sets up the base game variables, set up default turn label name for PVP,
+        /// hides turn label if not PVP,
+        /// assign row matches and matches remaining based on difficulty, calls the PlaceMatches() method 
+        /// </summary>
         public void SetUp()
         {
       
@@ -478,6 +495,12 @@ namespace GameOfNim
             }
             PlaceMatches();
         }
+        /// <summary>
+        /// Changes player turn,
+        /// changes isPlayer1Turn boolean,
+        /// changes row buttons to visible,
+        /// changes turn label based on current players turn
+        /// </summary>
         public void PlayerRotation()
         {
           
@@ -531,6 +554,12 @@ namespace GameOfNim
                 }
          
         }
+        /// <summary>
+        /// Sets game mode,
+        /// changes label visibility based on game mode selection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void PVPSelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
             int selectedIndex = modeSelect.SelectedIndex;
