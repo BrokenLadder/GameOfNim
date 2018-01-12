@@ -253,6 +253,8 @@ namespace GameOfNim
             Game.Visibility = Visibility.Hidden;
             EndScreen.Visibility = Visibility.Hidden;
             //playerName = p_one_name.Text;
+            Turn_Label.Visibility = Visibility.Visible;
+
             p_one_name.Text = "Player 1 Name";
             p_two_name.Text = "Player 2 Name";
             computerName = "";
