@@ -45,6 +45,10 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            if(gameMode != "PVC" || gameMode != "PVP")
+            {
+                gameMode = "PVC";
+            }
             if (p_one_name.Text != "")
             {
                 playerName = p_one_name.Text;
@@ -75,6 +79,7 @@ namespace GameOfNim
             {
                 row_four_btn.Visibility = Visibility.Hidden;
             }
+
             SetUp();
             SetUpGrid.Visibility = Visibility.Hidden;
             Game.Visibility = Visibility.Visible;
@@ -124,7 +129,7 @@ namespace GameOfNim
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
-            if (row3labels.Count < 0)
+            if (row3labels.Count != 0)
             {
                 Row_three.Children.Remove(row3labels.Last());
                 row3labels.Remove(row3labels.Last());
