@@ -47,7 +47,10 @@ namespace GameOfNim
         {
             if (gameMode == "PVC" || gameMode == "PVP")
             {
-
+                row_one_btn.Visibility = Visibility.Visible;
+                row_two_btn.Visibility = Visibility.Visible;
+                row_three_btn.Visibility = Visibility.Visible;
+                row_four_btn.Visibility = Visibility.Visible;
 
                 if (p_one_name.Text != "")
                 {
