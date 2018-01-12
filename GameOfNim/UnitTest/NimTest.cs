@@ -111,6 +111,57 @@ namespace UnitTest
             mw.SetUp();
             mw.Row_one_btn_Click(null, null);
             Assert.IsTrue(mw.matchesRemaining == 21);
+            
         }
+        [TestMethod]
+        public void Yes_ClickRow1MatchReset()
+        {
+            int expectedResult = 0;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.row1MatchesLeft);
+        }
+        [TestMethod]
+        public void Yes_ClickRow2MatchReset()
+        {
+            int expectedResult = 0;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.row2MatchesLeft);
+        }
+        [TestMethod]
+        public void Yes_ClickRow3MatchReset()
+        {
+            int expectedResult = 0;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.row3MatchesLeft);
+        }
+        [TestMethod]
+        public void Yes_ClickRow4MatchReset()
+        {
+            int expectedResult = 0;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.row4MatchesLeft);
+        }
+        [TestMethod]
+        public void YesisPVPReset()
+        {
+            bool expectedResult = false;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.isPVP);
+        }
+        [TestMethod]
+        public void YesisPlayer1TurnReset()
+        {
+            bool expectedResult = true;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.isPlayer1Turn);
+        }
+        [TestMethod]
+        public void YesisMatchTakenReset()
+        {
+            bool expectedResult = false;
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(expectedResult == mw.matchTaken);
+        }
+
     }
 }
