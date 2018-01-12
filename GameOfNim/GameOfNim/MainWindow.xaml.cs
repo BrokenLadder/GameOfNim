@@ -312,7 +312,29 @@ namespace GameOfNim
             }
             else
             {
-                //Figure Out How EndGame Goes and set the person whos turn it just was to the loser
+                if (isPVP == true)
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = player2Name + "Wins!";
+                    }
+                    else
+                    {
+                        Win_Announce.Content = playerName + "Wins!";
+                    }
+                }
+                else
+                {
+                    if (isPlayer1Turn == true)
+                    {
+                        Win_Announce.Content = computerName + "Wins!";
+                    }
+                    else
+                    {
+                        Win_Announce.Content = playerName + "Wins!";
+                    }
+                }
+                EndGame();
             }
         }
 
