@@ -33,10 +33,10 @@ namespace GameOfNim
         public bool isPVP;
         public bool isPlayer1Turn;
         public bool matchTaken = false;
-        List<Label> row1labels = new List<Label>();
-        List<Label> row2labels = new List<Label>();
-        List<Label> row3labels = new List<Label>();
-        List<Label> row4labels = new List<Label>();
+        public List<Label> row1labels = new List<Label>();
+        public List<Label> row2labels = new List<Label>();
+        public List<Label> row3labels = new List<Label>();
+        public List<Label> row4labels = new List<Label>();
 
         public MainWindow()
         {
@@ -299,7 +299,7 @@ namespace GameOfNim
             }
             
         }
-        private void Yes_Click(object sender, RoutedEventArgs e)
+        public void Yes_Click(object sender, RoutedEventArgs e)
         {
             SetUpGrid.Visibility = Visibility.Visible;
             Game.Visibility = Visibility.Hidden;
@@ -353,11 +353,12 @@ namespace GameOfNim
             {
                 if (row1MatchesLeft > 0)
                 {
+                    row1MatchesLeft--;
                     //row1labels[0].Visibility = Visibility.Hidden;
                     //Label l = row1labels[0];
                     Row_one.Children.Remove(row1labels[0]);
                     row1labels.Remove(row1labels[0]);
-                    row1MatchesLeft--;
+                    
                     
                 }
                 else if (row2MatchesLeft > 0)
@@ -612,7 +613,7 @@ namespace GameOfNim
             }
         }
         /// <summary>
-        /// changes the visibility of thw two grids
+        /// changes the visibility of the two grids
         /// </summary>
         public void EndGame()
         {
@@ -620,7 +621,6 @@ namespace GameOfNim
             EndScreen.Visibility = Visibility.Visible;
         }
 
-
+        
     }
-
 }
