@@ -422,13 +422,15 @@ namespace GameOfNim
 
             }
         }
-        public void PVPSelectedIndexChanged()
+        public void PVPSelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            int selectedIndex = modeSelect.SelectedIndex;
-            Object selectedItem = modeSelect.SelectedItem;
-            if (selectedItem.ToString() == "PVC")
+            //int selectedIndex = modeSelect.SelectedIndex;
+            //Object selectedItem = modeSelect.SelectedItem;
+            string modeText = modeSelect.Text;
+            if (modeText == "PVC")
             {
                 p_two_name.Visibility = Visibility.Hidden;
+                
                 gameMode = "PVC";
                 computerName = "CPU";
             }
