@@ -45,44 +45,45 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if(gameMode != "PVC" || gameMode != "PVP")
+            if (gameMode != "PVC" || gameMode != "PVP")
             {
-                gameMode = "PVC";
-            }
-            if (p_one_name.Text != "")
-            {
-                playerName = p_one_name.Text;
-            }
-            else
-            {
-                playerName = "Player One";
-            }
-            if (p_two_name.Visibility != Visibility.Hidden)
-            {
-                if (p_two_name.Text != "")
+
+
+                if (p_one_name.Text != "")
                 {
-                    player2Name = p_two_name.Text;
+                    playerName = p_one_name.Text;
                 }
                 else
                 {
-                    player2Name = "Player Two";
-
+                    playerName = "Player One";
                 }
-            }
-            difficulty = diffSelect.Text;
-            if(difficulty == "Easy")
-            {
-                row_three_btn.Visibility = Visibility.Hidden;
-                row_four_btn.Visibility = Visibility.Hidden;
-            }
-            else if(difficulty == "Medium")
-            {
-                row_four_btn.Visibility = Visibility.Hidden;
-            }
+                if (p_two_name.Visibility != Visibility.Hidden)
+                {
+                    if (p_two_name.Text != "")
+                    {
+                        player2Name = p_two_name.Text;
+                    }
+                    else
+                    {
+                        player2Name = "Player Two";
 
-            SetUp();
-            SetUpGrid.Visibility = Visibility.Hidden;
-            Game.Visibility = Visibility.Visible;
+                    }
+                }
+                difficulty = diffSelect.Text;
+                if (difficulty == "Easy")
+                {
+                    row_three_btn.Visibility = Visibility.Hidden;
+                    row_four_btn.Visibility = Visibility.Hidden;
+                }
+                else if (difficulty == "Medium")
+                {
+                    row_four_btn.Visibility = Visibility.Hidden;
+                }
+
+                SetUp();
+                SetUpGrid.Visibility = Visibility.Hidden;
+                Game.Visibility = Visibility.Visible;
+            }
         }
 
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
