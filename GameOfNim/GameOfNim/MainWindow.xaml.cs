@@ -45,7 +45,7 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            if (gameMode != "PVC" || gameMode != "PVP")
+            if (gameMode == "PVC" || gameMode == "PVP")
             {
 
 
