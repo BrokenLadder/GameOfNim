@@ -57,11 +57,11 @@ namespace GameOfNim
             {
                 if (p_two_name.Text != "")
                 {
-                    playerName = p_two_name.Text;
+                    player2Name = p_two_name.Text;
                 }
                 else
                 {
-                    playerName = "Player Two";
+                    player2Name = "Player Two";
 
                 }
             }
