@@ -45,9 +45,36 @@ namespace GameOfNim
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            playerName = p_one_name.Text;
-            player2Name = p_two_name.Text;
+            if (p_one_name.Text != "")
+            {
+                playerName = p_one_name.Text;
+            }
+            else
+            {
+                playerName = "Player One";
+            }
+            if (p_two_name.Visibility != Visibility.Hidden)
+            {
+                if (p_two_name.Text != "")
+                {
+                    playerName = p_two_name.Text;
+                }
+                else
+                {
+                    playerName = "Player Two";
+
+                }
+            }
             difficulty = diffSelect.Text;
+            if(difficulty == "Easy")
+            {
+                row_three_btn.Visibility = Visibility.Hidden;
+                row_four_btn.Visibility = Visibility.Hidden;
+            }
+            else if(difficulty == "Medium")
+            {
+                row_four_btn.Visibility = Visibility.Hidden;
+            }
             SetUp();
             SetUpGrid.Visibility = Visibility.Hidden;
             Game.Visibility = Visibility.Visible;
@@ -55,12 +82,15 @@ namespace GameOfNim
 
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
         {
-            row1MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
-
+            if(row1labels.Count != 0)
+            {
+                row1labels.Remove(row1labels.Last());
+            }
+            row1MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if(row1MatchesLeft == 0)
             {
                 row_one_btn.Visibility = Visibility.Hidden;
@@ -69,11 +99,15 @@ namespace GameOfNim
         }
         private void Row_two_btn_Click(object sender, RoutedEventArgs e)
         {
-            row2MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
+            if (row2labels.Count != 0)
+            {
+                row2labels.Remove(row2labels.Last());
+            }
+            row2MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row2MatchesLeft == 0)
             {
                 row_two_btn.Visibility = Visibility.Hidden;
@@ -83,12 +117,15 @@ namespace GameOfNim
 
         private void Row_three_btn_Click(object sender, RoutedEventArgs e)
         {
-            
-            row3MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
+            if (row3labels.Count != 0)
+            {
+                row3labels.Remove(row3labels.Last());
+            }
+            row3MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row3MatchesLeft == 0)
             {
                 row_three_btn.Visibility = Visibility.Hidden;
@@ -97,11 +134,15 @@ namespace GameOfNim
 
         private void Row_four_btn_Click(object sender, RoutedEventArgs e)
         {
-            row4MatchesLeft -= 1;
-            matchesRemaining -= 1;
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
+            if (row4labels.Count != 0)
+            {
+                row4labels.Remove(row4labels.Last());
+            }
+            row4MatchesLeft -= 1;
+            matchesRemaining -= 1;
             if (row4MatchesLeft == 0)
             {
                 row_four_btn.Visibility = Visibility.Hidden;
@@ -262,37 +303,58 @@ namespace GameOfNim
 
         public void PlaceMatches()
         {
-
-            for (int i = 1; i < row1MatchesLeft; i++)
+            var counter1 = 1;
+            var counter2 = 1;
+            var counter3 = 1;
+            var counter4 = 1;
+            for (int i = 0; i < row1MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row1match" + i;
+                label.Content = "Match";
+                label.Name = "row1match" + counter1;
+
+                //label.Name = "row1match" + i;
+
                 row1labels.Add(label);
                 Row_one.Children.Add(label);
+                 counter1++;
+
             }
-            for (int i = 1; i < row2MatchesLeft; i++)
+            for (int i = 0; i < row2MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row2match" + i;
+                label.Content = "Match";
+
+                label.Name = "row2match" + counter2;
                 row2labels.Add(label);
 
                 Row_two.Children.Add(label);
+                counter2++;
+
             }
-            for (int i = 1; i < row3MatchesLeft; i++)
+            for (int i = 0; i < row3MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row3match" + i;
+                label.Content = "Match";
+
+                label.Name = "row3match" + counter3;
                 row3labels.Add(label);
 
                 Row_three.Children.Add(label);
+                counter3++;
+
             }
-            for (int i = 1; i < row4MatchesLeft; i++)
+            for (int i = 0; i < row4MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row4match" + i;
+                label.Content = "Match";
+
+                label.Name = "row4match" + counter4;
                 row4labels.Add(label);
 
                 Row_four.Children.Add(label);
+                counter4++;
+
             }
 
 
@@ -315,7 +377,7 @@ namespace GameOfNim
             {
                 row1MatchesLeft = 2;
                 row2MatchesLeft = 5;
-                row2MatchesLeft = 7;
+                row3MatchesLeft = 7;
             }
             else
             {
