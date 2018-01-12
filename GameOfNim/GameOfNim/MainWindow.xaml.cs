@@ -314,7 +314,6 @@ namespace GameOfNim
             p_two_name.Text = "Player 2 Name";
             computerName = "";
             playerName = "";
-            playerName = "";
             player2Name = "";
             difficulty = "";
             gameMode = "";
