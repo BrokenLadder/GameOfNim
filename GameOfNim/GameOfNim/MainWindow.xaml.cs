@@ -310,8 +310,14 @@ namespace GameOfNim
                 }
                 row_one_btn.Visibility = Visibility.Visible;
                 row_two_btn.Visibility = Visibility.Visible;
-                row_three_btn.Visibility = Visibility.Visible;
-                row_four_btn.Visibility = Visibility.Visible;
+                if(difficulty == "Hard" || difficulty == "Medium")
+                {
+                    row_three_btn.Visibility = Visibility.Visible;
+                    if(difficulty == "Hard")
+                    {
+                        row_four_btn.Visibility = Visibility.Visible;
+                    }                   
+                }               
                 matchesRemaining--;
             }
             else
