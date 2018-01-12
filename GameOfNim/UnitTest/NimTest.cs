@@ -112,5 +112,117 @@ namespace UnitTest
             mw.Row_one_btn_Click(null, null);
             Assert.IsTrue(mw.matchesRemaining == 21);
         }
+        //row2match count needs to go down by 1 each time clicked
+        [TestMethod]
+        public void Row2MatchChange()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Easy";
+            mw.SetUp();
+            mw.Row_two_btn_Click(null, null);
+            Assert.IsTrue(mw.row2MatchesLeft == 2);
+
+        }
+
+        //row3match count needs to go down by 1 each time clicked
+        [TestMethod]
+        public void Row3MatchChange()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Medium";
+            mw.SetUp();
+            mw.Row_three_btn_Click(null, null);
+            Assert.IsTrue(mw.row3MatchesLeft == 6);
+        }
+
+        //row4match count needs to go down by 1 each time clicked
+        [TestMethod]
+        public void Row4MatchChange()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            mw.SetUp();
+            mw.Row_four_btn_Click(null, null);
+            Assert.IsTrue(mw.row4MatchesLeft == 8);
+        }
+
+        //matchesRemaining goes down by 1 each time the button is clicked
+        [TestMethod]
+        public void Row2MatchesRemainingGoesDown1()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Easy";
+            mw.SetUp();
+            mw.Row_two_btn_Click(null, null);
+            Assert.IsTrue(mw.matchesRemaining == 5);
+        }
+
+        //matchesRemaining goes down by 1 each time the button is clicked
+        [TestMethod]
+        public void Row3MatchesRemainingGoesDown1()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Medium";
+            mw.SetUp();
+            mw.Row_three_btn_Click(null, null);
+            Assert.IsTrue(mw.matchesRemaining == 13);
+        }
+
+        //matchesRemaining goes down by 1 each time the button is clicked
+        [TestMethod]
+        public void Row4MatchesRemainingGoesDown1()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            mw.SetUp();
+            mw.Row_four_btn_Click(null, null);
+            Assert.IsTrue(mw.matchesRemaining == 21);
+        }
+
+        // matchTaken bool is changed to true
+        [TestMethod]
+        public void Row1MatchesTakenBoolChanges()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            mw.SetUp();
+            mw.Row_one_btn_Click(null, null);
+            Assert.IsTrue(mw.matchTaken == true);
+        }
+
+        // matchTaken bool is changed to true
+        [TestMethod]
+        public void Row2MatchesTakenBoolChanges()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Easy";
+            mw.SetUp();
+            mw.Row_two_btn_Click(null, null);
+            Assert.IsTrue(mw.matchTaken == true);
+        }
+
+        // matchTaken bool is changed to true
+        [TestMethod]
+        public void Row3MatchesTakenBoolChanges()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Medium";
+            mw.SetUp();
+            mw.Row_three_btn_Click(null, null);
+            Assert.IsTrue(mw.matchTaken == true);
+        }
+
+        // matchTaken bool is changed to true
+        [TestMethod]
+        public void Row4MatchesTakenBoolChanges()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            mw.SetUp();
+            mw.Row_four_btn_Click(null, null);
+            Assert.IsTrue(mw.matchTaken == true);
+
+        }
+
     }
 }
