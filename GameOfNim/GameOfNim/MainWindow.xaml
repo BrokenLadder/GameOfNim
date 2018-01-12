@@ -69,7 +69,7 @@
                 <StackPanel Orientation="Horizontal" x:Name="Row_two" Height="60"></StackPanel>
                 <StackPanel Orientation="Horizontal" x:Name="Row_three" Height="60"></StackPanel>
                 <StackPanel Orientation="Horizontal" x:Name="Row_four" Height="60"></StackPanel>
-                <Label x:Name="Turn_Label" Height="60" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">Player 1 Turn.</Label>
+                <Label x:Name="Turn_Label" Height="60" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
             </StackPanel>
             <StackPanel Grid.Column="1" Background="CadetBlue">
                 <Button x:Name="row_one_btn"

@@ -413,12 +413,15 @@ namespace GameOfNim
             {
                 row1MatchesLeft = 3;
                 row2MatchesLeft = 3;
+                matchesRemaining = 6;
             }
             else if (difficulty == "Medium")
             {
                 row1MatchesLeft = 2;
                 row2MatchesLeft = 5;
                 row3MatchesLeft = 7;
+                matchesRemaining = 14;
+
             }
             else
             {
@@ -426,6 +429,8 @@ namespace GameOfNim
                 row2MatchesLeft = 3;
                 row3MatchesLeft = 8;
                 row4MatchesLeft = 9;
+                matchesRemaining = 22;
+
 
             }
 
@@ -438,15 +443,18 @@ namespace GameOfNim
         }
         public void PlayerRotation()
         {
+          
+
             if (matchesRemaining == 1)
             {
                 EndGame();
             }
 
+
             if (isPlayer1Turn == true)
             {
 
-            isPlayer1Turn = false;
+                isPlayer1Turn = false;
             }
             else
             {
@@ -474,16 +482,17 @@ namespace GameOfNim
 
             }
 
-            if (isPlayer1Turn == false)
-            {
-                Turn_Label.Content = player2Name;
+                if (isPlayer1Turn == false)
+                {
+                    Turn_Label.Content = player2Name;
 
-            }
-            else
-            {
-                Turn_Label.Content = playerName;
+                }
+                else
+                {
+                    Turn_Label.Content = playerName;
 
-            }
+                }
+         
         }
         public void PVPSelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
