@@ -262,37 +262,58 @@ namespace GameOfNim
 
         public void PlaceMatches()
         {
-
-            for (int i = 1; i < row1MatchesLeft; i++)
+            var counter1 = 1;
+            var counter2 = 1;
+            var counter3 = 1;
+            var counter4 = 1;
+            for (int i = 0; i < row1MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row1match" + i;
+                label.Content = "Match";
+                label.Name = "row1match" + counter1;
+
+                //label.Name = "row1match" + i;
+
                 row1labels.Add(label);
                 Row_one.Children.Add(label);
+                 counter1++;
+
             }
-            for (int i = 1; i < row2MatchesLeft; i++)
+            for (int i = 0; i < row2MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row2match" + i;
+                label.Content = "Match";
+
+                label.Name = "row2match" + counter2;
                 row2labels.Add(label);
 
                 Row_two.Children.Add(label);
+                counter2++;
+
             }
-            for (int i = 1; i < row3MatchesLeft; i++)
+            for (int i = 0; i < row3MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row3match" + i;
+                label.Content = "Match";
+
+                label.Name = "row3match" + counter3;
                 row3labels.Add(label);
 
                 Row_three.Children.Add(label);
+                counter3++;
+
             }
-            for (int i = 1; i < row4MatchesLeft; i++)
+            for (int i = 0; i < row4MatchesLeft; i++)
             {
                 Label label = new Label();
-                label.Name = "row4match" + i;
+                label.Content = "Match";
+
+                label.Name = "row4match" + counter4;
                 row4labels.Add(label);
 
                 Row_four.Children.Add(label);
+                counter4++;
+
             }
 
 
@@ -315,7 +336,7 @@ namespace GameOfNim
             {
                 row1MatchesLeft = 2;
                 row2MatchesLeft = 5;
-                row2MatchesLeft = 7;
+                row3MatchesLeft = 7;
             }
             else
             {
