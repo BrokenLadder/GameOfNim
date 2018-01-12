@@ -49,12 +49,12 @@
                         Margin="0 50 0 0">Start Game</Button>
             </StackPanel>
             <StackPanel Grid.Column="1">
-                <TextBox FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</TextBox>
-                <TextBox TextWrapping="Wrap">1.Each player takes any amount of matches from one row.</TextBox>
-                <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
-                <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
-                <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
-                <TextBox TextWrapping="Wrap">*Computer automatically takes their turn during PVC Mode.</TextBox>
+                <Label FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</Label>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">1.Each player takes any amount of matches from one row.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">3.The next player takes their turn.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">4.The player who takes the last match loses.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">*Computer automatically takes their turn during PVC Mode.</TextBox>
             </StackPanel>
         </Grid>
 
@@ -92,12 +92,12 @@
                         Margin="10 0"></Label>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <TextBox FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</TextBox>
-                <TextBox TextWrapping="Wrap">1.Each player takes any amount of matches from one row.</TextBox>
-                <TextBox TextWrapping="Wrap">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
-                <TextBox TextWrapping="Wrap">3.The next player takes their turn.</TextBox>
-                <TextBox TextWrapping="Wrap">4.The player who takes the last match loses.</TextBox>
-                <TextBox TextWrapping="Wrap">*Computer automatically takes their turn during PVC Mode.</TextBox>
+                <Label FontSize="16" FontWeight="Bold" FontStyle="Italic">Rules of Nim:</Label>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">1.Each player takes any amount of matches from one row.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">2.You can only take matches from the row you pick at first and ONLY that row.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">3.The next player takes their turn.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">4.The player who takes the last match loses.</TextBox>
+                <TextBox TextWrapping="Wrap" IsHitTestVisible="False">*Computer automatically takes their turn during PVC Mode.</TextBox>
             </StackPanel>
         </Grid>
 
