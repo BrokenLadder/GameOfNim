@@ -57,11 +57,11 @@ namespace GameOfNim
             {
                 if (p_two_name.Text != "")
                 {
-                    playerName = p_two_name.Text;
+                    player2Name = p_two_name.Text;
                 }
                 else
                 {
-                    playerName = "Player Two";
+                    player2Name = "Player Two";
 
                 }
             }
@@ -91,8 +91,9 @@ namespace GameOfNim
                 Row_one.Children.Remove(row1labels.Last());
 
             }
-            row1MatchesLeft -= 1;
-            matchesRemaining -= 1;
+            row1MatchesLeft --;
+            matchesRemaining --;
+            matchTaken = true;
             if(row1MatchesLeft == 0)
             {
                 row_one_btn.Visibility = Visibility.Hidden;
@@ -111,6 +112,7 @@ namespace GameOfNim
             }
             row2MatchesLeft -= 1;
             matchesRemaining -= 1;
+            matchTaken = true;
             if (row2MatchesLeft == 0)
             {
                 row_two_btn.Visibility = Visibility.Hidden;
@@ -123,13 +125,14 @@ namespace GameOfNim
             row_one_btn.Visibility = Visibility.Hidden;
             row_two_btn.Visibility = Visibility.Hidden;
             row_four_btn.Visibility = Visibility.Hidden;
-            if (row3labels.Count != 0)
+            if (row3labels.Count < 0)
             {
                 row3labels.Remove(row3labels.Last());
                 Row_three.Children.Remove(row3labels.Last());
             }
             row3MatchesLeft -= 1;
             matchesRemaining -= 1;
+            matchTaken = true;
             if (row3MatchesLeft == 0)
             {
                 row_three_btn.Visibility = Visibility.Hidden;
@@ -148,6 +151,7 @@ namespace GameOfNim
             }
             row4MatchesLeft -= 1;
             matchesRemaining -= 1;
+            matchTaken = true;
             if (row4MatchesLeft == 0)
             {
                 row_four_btn.Visibility = Visibility.Hidden;
