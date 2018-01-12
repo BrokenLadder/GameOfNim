@@ -87,9 +87,8 @@ namespace GameOfNim
             row_four_btn.Visibility = Visibility.Hidden;
             if(row1labels.Count != 0)
             {
-                row1labels.Remove(row1labels.Last());
                 Row_one.Children.Remove(row1labels.Last());
-
+                row1labels.Remove(row1labels.Last());
             }
             row1MatchesLeft --;
             matchesRemaining --;
@@ -107,8 +106,8 @@ namespace GameOfNim
             row_four_btn.Visibility = Visibility.Hidden;
             if (row2labels.Count != 0)
             {
-                row2labels.Remove(row2labels.Last());
                 Row_two.Children.Remove(row2labels.Last());
+                row2labels.Remove(row2labels.Last());
             }
             row2MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -127,8 +126,8 @@ namespace GameOfNim
             row_four_btn.Visibility = Visibility.Hidden;
             if (row3labels.Count < 0)
             {
-                row3labels.Remove(row3labels.Last());
                 Row_three.Children.Remove(row3labels.Last());
+                row3labels.Remove(row3labels.Last());
             }
             row3MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -146,8 +145,8 @@ namespace GameOfNim
             row_three_btn.Visibility = Visibility.Hidden;
             if (row4labels.Count != 0)
             {
-                row4labels.Remove(row4labels.Last());
                 Row_four.Children.Remove(row4labels.Last());
+                row4labels.Remove(row4labels.Last());
             }
             row4MatchesLeft -= 1;
             matchesRemaining -= 1;
