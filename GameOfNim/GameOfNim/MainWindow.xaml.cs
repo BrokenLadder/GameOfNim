@@ -451,18 +451,18 @@ namespace GameOfNim
         }
         public void PVPSelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            //int selectedIndex = modeSelect.SelectedIndex;
-            //Object selectedItem = modeSelect.SelectedItem;
-            string modeText = modeSelect.Text;
-            if (modeText == "PVC")
+            int selectedIndex = modeSelect.SelectedIndex;
+            if (selectedIndex == 1)
             {
                 p_two_name.Visibility = Visibility.Hidden;
-                
+                Player_Two_Label.Visibility = Visibility.Hidden;
                 gameMode = "PVC";
                 computerName = "CPU";
             }
             else
             {
+                p_two_name.Visibility = Visibility.Visible;
+                Player_Two_Label.Visibility = Visibility.Visible;
                 gameMode = "PVP";
                 isPVP = true;
 
