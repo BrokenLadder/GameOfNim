@@ -307,14 +307,29 @@ namespace GameOfNim
                 {
                     Console.WriteLine("There are no matches left in any rows");
                 }
-                row_one_btn.Visibility = Visibility.Visible;
-                row_two_btn.Visibility = Visibility.Visible;
+                if(row1MatchesLeft > 0)
+                {
+                    row_one_btn.Visibility = Visibility.Visible;
+                }
+                if(row2MatchesLeft > 0)
+                {
+                    row_two_btn.Visibility = Visibility.Visible;
+                }
+                
                 if(difficulty == "Hard" || difficulty == "Medium")
                 {
-                    row_three_btn.Visibility = Visibility.Visible;
+                    if(row3MatchesLeft > 0)
+                    {
+                        row_three_btn.Visibility = Visibility.Visible;
+                    }
+                    
                     if(difficulty == "Hard")
                     {
-                        row_four_btn.Visibility = Visibility.Visible;
+                        if(row4MatchesLeft > 0)
+                        {
+                            row_four_btn.Visibility = Visibility.Visible;
+                        }
+                        
                     }                   
                 }               
                 matchesRemaining--;
