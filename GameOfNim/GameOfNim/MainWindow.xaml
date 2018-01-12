@@ -21,7 +21,7 @@
                            Margin="0 15 0 0">Game of Nim Set-Up Page</TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Margin="10 10">Gamemode:</TextBlock>
-                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100" SelectionChanged="ModeSelect_SelectionChanged">
+                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100" SelectionChanged="PVPSelectedIndexChanged">
                         <ComboBoxItem IsSelected="True">PVC</ComboBoxItem>
                         <ComboBoxItem>PVP</ComboBoxItem>
                     </ComboBox>
@@ -31,7 +31,7 @@
                     <TextBox x:Name="p_one_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10">Player 1 Name</TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Player 2:</TextBlock>
+                    <Label x:Name="Player_Two_Label" FontSize="14" FontWeight="Bold" Padding="0 2 0 0" Margin="10 10">Player 2:</Label>
                     <TextBox x:Name="p_two_name" Width="100" Height="25" Padding="0 2 0 0" Margin="15 10" >Player 2 Name</TextBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
