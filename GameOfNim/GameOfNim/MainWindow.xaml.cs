@@ -43,6 +43,13 @@ namespace GameOfNim
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets up the game variables(gamemode, player names, difficulty)
+        /// changes grid visability
+        /// calls the Setup()
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             if (gameMode == "PVC" || gameMode == "PVP")
@@ -89,6 +96,14 @@ namespace GameOfNim
             }
         }
 
+        /// <summary>
+        /// changes other buttons visibility
+        /// removes from the items from the two list
+        /// removes one from matchesRemaining and matches left in that row
+        /// matchtaken is changed to true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_one_btn_Click(object sender, RoutedEventArgs e)
         {
             row_two_btn.Visibility = Visibility.Hidden;
@@ -108,6 +123,15 @@ namespace GameOfNim
             }
 
         }
+
+        /// <summary>
+        /// changes other buttons visibility
+        /// removes from the items from the two list
+        /// removes one from matchesRemaining and matches left in that row
+        /// matchtaken is changed to true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_two_btn_Click(object sender, RoutedEventArgs e)
         {
             row_one_btn.Visibility = Visibility.Hidden;
@@ -128,6 +152,14 @@ namespace GameOfNim
 
         }
 
+        /// <summary>
+        /// changes other buttons visibility
+        /// removes from the items from the two list
+        /// removes one from matchesRemaining and matches left in that row
+        /// matchtaken is changed to true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_three_btn_Click(object sender, RoutedEventArgs e)
         {
             row_one_btn.Visibility = Visibility.Hidden;
@@ -147,6 +179,14 @@ namespace GameOfNim
             }
         }
 
+        /// <summary>
+        /// changes other buttons visibility
+        /// removes from the items from the two list
+        /// removes one from matchesRemaining and matches left in that row
+        /// matchtaken is changed to true
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_four_btn_Click(object sender, RoutedEventArgs e)
         {
             row_one_btn.Visibility = Visibility.Hidden;
@@ -165,7 +205,19 @@ namespace GameOfNim
                 row_four_btn.Visibility = Visibility.Hidden;
             }
         }
-
+        /// <summary>
+        /// Checks to see if matchTaken is True (meaning the current player took a match)
+        /// If Yes
+        ///     Checks If Matches Remaining is below 1
+        ///         If yes calls EndGame() and changes winning label  
+        ///         If No Checks isPVP()
+        ///             If Yes calls PlayerRotation()
+        ///             If No calls ComputerTurn()
+        /// If No
+        /// Does Nothing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EndTurn_btn_Click(object sender, RoutedEventArgs e)
         {
             if (matchTaken == true)
@@ -291,6 +343,15 @@ namespace GameOfNim
             this.Close();
 
         }
+        /// <summary>
+        /// Essentially it takes the computers turn when the End Turn Button is pressed
+        /// Checks on the amount of matches left and branches
+        ///     1 Match left means it declares the current player as the winner and moves to the end screen
+        ///     Less than one match left means it declares the computer as the winner
+        ///     More than one match the computer checks row1-4Matches remaining and takes a match from the first available row
+        ///     Taking a match includes removing the match label from that row and removing the label from the list of labels, and subtract 1 from row1-4MatchesLeft
+        ///     Subtracts 1 from matches remainig
+        /// </summary>
         public void ComputerTurn()
         {
             if(matchesRemaining == 1)
@@ -579,21 +640,16 @@ namespace GameOfNim
 
             }
         }
+        /// <summary>
+        /// changes the visibility of thw two grids
+        /// </summary>
         public void EndGame()
         {
             Game.Visibility = Visibility.Hidden;
             EndScreen.Visibility = Visibility.Visible;
         }
 
-//<<<<<<< HEAD
-        private void ModeSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-//=======
-
-
-//>>>>>>> ce24027f449337d6525c6966216d6fe08e36e2ee
     }
 
 }
