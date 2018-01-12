@@ -66,11 +66,12 @@ namespace GameOfNim
                 }
             }
             difficulty = diffSelect.Text;
-            if(gameMode != "Hard" || gameMode != "Medium")
+            if(difficulty == "Easy")
             {
                 row_three_btn.Visibility = Visibility.Hidden;
+                row_four_btn.Visibility = Visibility.Hidden;
             }
-            if(gameMode != "Hard")
+            else if(difficulty == "Medium")
             {
                 row_four_btn.Visibility = Visibility.Hidden;
             }
