@@ -224,5 +224,66 @@ namespace UnitTest
 
         }
 
+        [TestMethod]
+        public void ReplayYesButtonResetMatchesRemainingReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            int expected = 0;
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.matchesRemaining == expected);
+        }
+        [TestMethod]
+        public void ReplayYesButtonResetGameModeReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            string expected = "";
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.gameMode == expected);
+        }
+        [TestMethod]
+        public void ReplayYesButtonResetDifficultyReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            string expected = "";
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.difficulty == expected);
+        }
+        [TestMethod]
+        public void ReplayYesButtonResetPlayerNameReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            string expected = "";
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.playerName == expected);
+        }
+        [TestMethod]
+        public void ReplayYesButtonResetPlayer2NameReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            string expected = "";
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.player2Name == expected);
+        }
+        [TestMethod]
+        public void ReplayYesButtonResetCPUNameReset()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            string expected = "";
+            mw.SetUp();
+            mw.Yes_Click(null, null);
+            Assert.IsTrue(mw.computerName == expected);
+        }
+ 
     }
 }
