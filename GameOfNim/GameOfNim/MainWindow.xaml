@@ -21,7 +21,7 @@
                            Margin="0 15 0 0">Game of Nim Set-Up Page</TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock FontSize="14" FontWeight="Bold" Margin="10 10">Gamemode:</TextBlock>
-                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100" SelectionChanged="ModeSelect_SelectionChanged">
+                    <ComboBox x:Name="modeSelect" Margin="10 10" MinWidth="100" SelectionChanged="PVPSelectedIndexChanged">
                         <ComboBoxItem IsSelected="True">PVC</ComboBoxItem>
                         <ComboBoxItem>PVP</ComboBoxItem>
                     </ComboBox>
