@@ -88,6 +88,8 @@ namespace GameOfNim
             if(row1labels.Count != 0)
             {
                 row1labels.Remove(row1labels.Last());
+                Row_one.Children.Remove(row1labels.Last());
+
             }
             row1MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -105,6 +107,7 @@ namespace GameOfNim
             if (row2labels.Count != 0)
             {
                 row2labels.Remove(row2labels.Last());
+                Row_two.Children.Remove(row2labels.Last());
             }
             row2MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -123,6 +126,7 @@ namespace GameOfNim
             if (row3labels.Count != 0)
             {
                 row3labels.Remove(row3labels.Last());
+                Row_three.Children.Remove(row3labels.Last());
             }
             row3MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -140,6 +144,7 @@ namespace GameOfNim
             if (row4labels.Count != 0)
             {
                 row4labels.Remove(row4labels.Last());
+                Row_four.Children.Remove(row4labels.Last());
             }
             row4MatchesLeft -= 1;
             matchesRemaining -= 1;
@@ -446,18 +451,18 @@ namespace GameOfNim
         }
         public void PVPSelectedIndexChanged(object sender, SelectionChangedEventArgs e)
         {
-            //int selectedIndex = modeSelect.SelectedIndex;
-            //Object selectedItem = modeSelect.SelectedItem;
-            string modeText = modeSelect.Text;
-            if (modeText == "PVC")
+            int selectedIndex = modeSelect.SelectedIndex;
+            if (selectedIndex == 1)
             {
                 p_two_name.Visibility = Visibility.Hidden;
-                
+                Player_Two_Label.Visibility = Visibility.Hidden;
                 gameMode = "PVC";
                 computerName = "CPU";
             }
             else
             {
+                p_two_name.Visibility = Visibility.Visible;
+                Player_Two_Label.Visibility = Visibility.Visible;
                 gameMode = "PVP";
                 isPVP = true;
 
