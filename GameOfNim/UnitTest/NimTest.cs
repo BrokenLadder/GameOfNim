@@ -103,5 +103,14 @@ namespace UnitTest
             mw.ComputerTurn();
             Assert.IsTrue(mw.row1labels.Count == row1LblCount-1);
         }
+        [TestMethod]
+        public void Row1BtnClickedMatchesRemainingMinus1()
+        {
+            mw.isPVP = false;
+            mw.difficulty = "Hard";
+            mw.SetUp();
+            mw.Row_one_btn_Click(null, null);
+            Assert.IsTrue(mw.matchesRemaining == 21);
+        }
     }
 }

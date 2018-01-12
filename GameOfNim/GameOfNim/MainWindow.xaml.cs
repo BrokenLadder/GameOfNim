@@ -104,7 +104,7 @@ namespace GameOfNim
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Row_one_btn_Click(object sender, RoutedEventArgs e)
+        public void Row_one_btn_Click(object sender, RoutedEventArgs e)
         {
             row_two_btn.Visibility = Visibility.Hidden;
             row_three_btn.Visibility = Visibility.Hidden;
