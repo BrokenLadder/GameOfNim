@@ -173,22 +173,22 @@ namespace GameOfNim
                     {
                         if (isPlayer1Turn == true)
                         {
-                            Win_Announce.Content = playerName + "Wins!";
+                            Win_Announce.Content = playerName + " Wins!";
                         }
                         else
                         {
-                            Win_Announce.Content = player2Name + "Wins!";
+                            Win_Announce.Content = player2Name + " Wins!";
                         }
                     }
                     else
                     {
                         if (isPlayer1Turn == true)
                         {
-                            Win_Announce.Content = playerName + "Wins!";
+                            Win_Announce.Content = playerName + " Wins!";
                         }
                         else
                         {
-                            Win_Announce.Content = computerName + "Wins!";
+                            Win_Announce.Content = computerName + " Wins!";
                         }
                     }
 
@@ -197,26 +197,29 @@ namespace GameOfNim
                 if (matchesRemaining <= 0)
                 {
                     //Change win label to the opposite of current player
+                    Game.Visibility = Visibility.Hidden;
+                    EndScreen.Visibility = Visibility.Visible;
                     if (isPVP == true)
                     {
                         if (isPlayer1Turn == true)
                         {
-                            Win_Announce.Content = player2Name + "Wins!";
+                            
+                            Win_Announce.Content = player2Name + " Wins!";
                         }
                         else
                         {
-                            Win_Announce.Content = playerName + "Wins!";
+                            Win_Announce.Content = playerName + " Wins!";
                         }
                     }
                     else
                     {
                         if (isPlayer1Turn == true)
                         {
-                            Win_Announce.Content = computerName + "Wins!";
+                            Win_Announce.Content = computerName + " Wins!";
                         }
                         else
                         {
-                            Win_Announce.Content = playerName + "Wins!";
+                            Win_Announce.Content = playerName + " Wins!";
                         }
                     }
                     
