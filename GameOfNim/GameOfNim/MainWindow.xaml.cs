@@ -32,7 +32,7 @@ namespace GameOfNim
         public int row4MatchesLeft;
         public bool isPVP;
         public bool isPlayer1Turn;
-        public bool matchTaken;
+        public bool matchTaken = false;
         List<Label> row1labels = new List<Label>();
         List<Label> row2labels = new List<Label>();
         List<Label> row3labels = new List<Label>();
@@ -160,71 +160,81 @@ namespace GameOfNim
 
         private void EndTurn_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (matchesRemaining == 1)
+            if (matchTaken == true)
             {
-                if (isPVP == true)
+                if (matchesRemaining == 1)
                 {
-                    if (isPlayer1Turn == true)
+                    if (isPVP == true)
                     {
-                        Win_Announce.Content = playerName;
+                        if (isPlayer1Turn == true)
+                        {
+                            Win_Announce.Content = playerName + "Wins!";
+                        }
+                        else
+                        {
+                            Win_Announce.Content = player2Name + "Wins!";
+                        }
                     }
                     else
                     {
-                        Win_Announce.Content = player2Name;
+                        if (isPlayer1Turn == true)
+                        {
+                            Win_Announce.Content = playerName + "Wins!";
+                        }
+                        else
+                        {
+                            Win_Announce.Content = computerName + "Wins!";
+                        }
                     }
-                }
-                else
-                {
-                    if (isPlayer1Turn == true)
-                    {
-                        Win_Announce.Content = playerName;
-                    }
-                    else
-                    {
-                        Win_Announce.Content = computerName;
-                    }
-                }
 
-                EndGame();
-            }
-            if (matchesRemaining <= 0)
-            {
-                //Change win label to the opposite of current player
-                if (isPVP == true)
+                    EndGame();
+                }
+                if (matchesRemaining <= 0)
                 {
-                    if (isPlayer1Turn == true)
+                    //Change win label to the opposite of current player
+                    if (isPVP == true)
                     {
-                        Win_Announce.Content = player2Name + "Wins!";
+                        if (isPlayer1Turn == true)
+                        {
+                            Win_Announce.Content = player2Name + "Wins!";
+                        }
+                        else
+                        {
+                            Win_Announce.Content = playerName + "Wins!";
+                        }
                     }
                     else
                     {
-                        Win_Announce.Content = playerName + "Wins!";
+                        if (isPlayer1Turn == true)
+                        {
+                            Win_Announce.Content = computerName + "Wins!";
+                        }
+                        else
+                        {
+                            Win_Announce.Content = playerName + "Wins!";
+                        }
                     }
+                    
                 }
                 else
                 {
-                    if (isPlayer1Turn == true)
+                    if (gameMode == "PVP")
                     {
-                        Win_Announce.Content = computerName + "Wins!";
+                        matchTaken = false;
+                        PlayerRotation();
+                    }
+                    else if (gameMode == "PVC")
+                    {
+                        matchTaken = false;
+                        ComputerTurn();
                     }
                     else
                     {
-                        Win_Announce.Content = playerName + "Wins!";
+                        Console.WriteLine("Game Mode Was Not Changed Correctly");
                     }
                 }
-                if (gameMode == "PVP")
-                {
-                    PlayerRotation();
-                }
-                else if (gameMode == "PVC")
-                {
-                    ComputerTurn();
-                }
-                else
-                {
-                    Console.WriteLine("Game Mode Was Not Changed Correctly");
-                }
             }
+            
         }
         private void Yes_Click(object sender, RoutedEventArgs e)
         {
@@ -268,28 +278,28 @@ namespace GameOfNim
                 {
                     //row1labels[0].Visibility = Visibility.Hidden;
                     //Label l = row1labels[0];
-                    Game.Children.Remove(row1labels[0]);
+                    Row_one.Children.Remove(row1labels[0]);
                     row1labels.Remove(row1labels[0]);
                     row1MatchesLeft--;
                     
                 }
                 else if (row2MatchesLeft > 0)
                 {
-                    Game.Children.Remove(row2labels[0]);
+                    Row_two.Children.Remove(row2labels[0]);
                     row2labels.Remove(row2labels[0]);
                     row2MatchesLeft--;
                     //Hide Match 2 Label
                 }
                 else if (row3MatchesLeft > 0)
                 {
-                    Game.Children.Remove(row3labels[0]);
+                    Row_three.Children.Remove(row3labels[0]);
                     row3labels.Remove(row3labels[0]);
                     row3MatchesLeft--;
                     //Hide Match 3 Label
                 }
                 else if (row4MatchesLeft > 0)
                 {
-                    Game.Children.Remove(row4labels[0]);
+                    Row_four.Children.Remove(row4labels[0]);
                     row4labels.Remove(row4labels[0]);
                     row4MatchesLeft--;
                     //Hide Match 4 Label
